@@ -1,0 +1,38 @@
+{
+	"name": "sass-boilerplate",
+	"version": "1.0.0",
+	"description": "SASS Boilerplate project",
+	"main": "index.js",
+	"scripts": {
+		"test": "sass-lint -c .sass-lint.yml -v -q",
+		"compile:sass": "node-sass sass/ -o dist/styles.css",
+		"dev:server": "live-server",
+		"dev:sass": "concurrently \"npm run compile:sass\" \"npm run dev:server\"",
+		"prod:build": ""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/rodrigomata/sass-boilerplate.git"
+	},
+	"keywords": [
+		"sass",
+		"boilerplate",
+		"architecture",
+		"7 in 1",
+		"initial",
+		"project"
+	],
+	"author": "Rodrigo Mata",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/rodrigomata/sass-boilerplate/issues"
+	},
+	"homepage": "https://github.com/rodrigomata/sass-boilerplate#readme",
+	"devDependencies": {
+		"concurrently": "^3.5.1",
+		"live-server": "^1.2.0",
+		"node-sass": "^4.9.0",
+		"sass-lint": "^1.12.1"
+	},
+	"sasslintConfig": "./.sass-lint.yml"
+}
