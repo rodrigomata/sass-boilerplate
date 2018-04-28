@@ -26,16 +26,18 @@ SASS boilerplate project to quickly start developing, it follows the [7 in 1 Arc
 ## Usage
 
 1. Run your SASS compiler with `npm run compile:sass`
-    - For SCSS style: `npm run compile:scss`
-2. If you want to autocompile SASS and auto-reload the webpage to develop faster, use `npm run dev:sass`
+2. If you want to autocompile SASS and auto-reload the webpage to develop faster, use `npm run dev`
 3. A window will open with the project, if not, navigate to [http://localhost:8080](http://localhost:8080) to start working on it
-3. Reference `dist/styles.css` in your html
-3. (Optional) Run your Live server with `npm run dev:server`
-4. (Optional) Minify assets and compile project with `npm run prod:build`
+3. Reference `dist/main.css` in your html
+4. (Optional) Only watch for .sass changes with `npm run watch:sass`
+4. (Optional) Run your Live server with `npm run dev:server`
+5. (Optional) Minify assets and compile project with `npm run prod:build`
 
 ## Contribution
 
-Please consider the following git styles for committs:
+Before committing be sure that you run `npm run test` and no errors are shown.
+
+Consider the following git styles for commits:
 
 http://udacity.github.io/git-styleguide/
 

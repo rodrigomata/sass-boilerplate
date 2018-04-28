@@ -5,9 +5,10 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "sass-lint -c .sass-lint.yml -v -q",
-		"compile:sass": "node-sass sass/ -o dist/styles.css",
+		"compile:sass": "node-sass sass/ -o dist/",
+		"watch:sass": "node-sass -w sass/ -o dist/",
 		"dev:server": "live-server",
-		"dev:sass": "concurrently \"npm run compile:sass\" \"npm run dev:server\"",
+		"dev": "concurrently \"npm run watch:sass\" \"npm run dev:server\"",
 		"prod:build": ""
 	},
 	"repository": {
