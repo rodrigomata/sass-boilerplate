@@ -1,4 +1,4 @@
-[![Known Vulnerabilities](https://snyk.io/test/github/rodrigomata/sass-boilerplate/badge.svg?targetFile=package.json)](https://snyk.io/test/github/rodrigomata/sass-boilerplate?targetFile=package.json)
+![Build Status](https://travis-ci.org/rodrigomata/sass-boilerplate.svg?branch=master)[![Known Vulnerabilities](https://snyk.io/test/github/rodrigomata/sass-boilerplate/badge.svg?targetFile=package.json)](https://snyk.io/test/github/rodrigomata/sass-boilerplate?targetFile=package.json)
 
 # SASS Boilerplate
 SASS boilerplate project to quickly start developing, it follows the [7 in 1 Architecture](https://sass-guidelin.es/#architecture) to keep components isolated and a clean project structure.
