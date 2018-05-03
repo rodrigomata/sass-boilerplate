@@ -27,13 +27,27 @@ SASS boilerplate project to quickly start developing, it follows the [7 in 1 Arc
 
 ## Usage
 
-1. Run your SASS compiler with `npm run compile:sass`
-2. If you want to autocompile SASS and auto-reload the webpage to develop faster, use `npm run dev`
-3. A window will open with the project, if not, navigate to [http://localhost:8080](http://localhost:8080) to start working on it
-3. Reference `dist/main.css` in your html
-4. (Optional) Only watch for .sass changes with `npm run watch:sass`
-4. (Optional) Run your Live server with `npm run dev:server`
-5. (Optional) Minify assets and compile project with `npm run prod:build`
+Compile SASS and live server
+------
+If you want to autocompile SASS and auto-reload the webpage to develop faster, use `npm run dev`
+- A window will open with the project, if not, navigate to [http://localhost:8080](http://localhost:8080) to start working on it
+- Reference `dist/main.css` in your html
+
+Compile only SASS
+------
+Run your SASS compiler with `npm run compile:sass`
+
+Only watch for SASS changes
+------
+`npm run watch:sass`
+
+Live server
+------
+`npm run dev:server`
+
+Minify and compile project
+------
+`npm run prod:build`
 
 ## Contribution
 
