@@ -22,7 +22,7 @@ SASS boilerplate project to quickly start developing, it follows the [7 in 1 Arc
 
 ## Installation
 
-1. Clone project with `git clone git@github.com:rodrigomata/sass-boilerplate.git``
+1. Clone project with `git clone git@github.com:rodrigomata/sass-boilerplate.git`
 2. Install `node-sass` dependencies with `npm i`
 
 ## Usage
