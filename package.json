@@ -4,12 +4,19 @@
 	"description": "SASS Boilerplate project",
 	"main": "index.js",
 	"scripts": {
+		"lint": "sass-lint -v",
+		"lint:fix": "sass-lint-auto-fix -c .sass-lint.yml -v",
 		"test": "sass-lint -c .sass-lint.yml -v -q",
 		"compile:sass": "node-sass sass/ -o dist/",
 		"watch:sass": "node-sass -w sass/ -o dist/",
 		"dev:server": "live-server",
 		"dev": "concurrently \"npm run watch:sass\" \"npm run dev:server\"",
 		"prod:build": ""
+	},
+	"husky": {
+		"hooks":{
+			"pre-commit": "npm run lint:fix && npm run lint"
+		}
 	},
 	"repository": {
 		"type": "git",
@@ -31,9 +38,11 @@
 	"homepage": "https://github.com/rodrigomata/sass-boilerplate#readme",
 	"devDependencies": {
 		"concurrently": "^3.5.1",
+		"husky": "^0.14.3",
 		"live-server": "^1.2.0",
 		"node-sass": "^4.9.0",
-		"sass-lint": "^1.12.1"
+		"sass-lint": "^1.12.1",
+		"sass-lint-auto-fix": "^0.7.0"
 	},
 	"sasslintConfig": "./.sass-lint.yml"
 }

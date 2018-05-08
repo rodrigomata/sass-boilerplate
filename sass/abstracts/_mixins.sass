@@ -30,52 +30,46 @@
     border-radius: $radius
 
 // Text shadow
-@mixin ts($tsval: 0px 1px 0px #fff)
+@mixin ts($tsval: 0 1px 0 #fff)
     text-shadow: $tsval
 
 // Box shadow
-@mixin bs($bsval: 0px 0px 0.83em #333, $due: 0 0 0 transparent)
+@mixin bs($bsval: 0 0 .83em #333, $due: 0 0 0 transparent)
     -moz-box-shadow: $bsval, $due
-    -webkit-box-shadow: $bsval, $due
     -o-box-shadow: $bsval, $due
+    -webkit-box-shadow: $bsval, $due
     box-shadow: $bsval, $due
 
 // Opacity
 @mixin opacity($opacity)
-    opacity: $opacity
     -moz-opacity: $opacity
+    opacity: $opacity
 
 // Transitions
 @mixin transition($transition: all linear .2s)
-    -webkit-transition: $transition
     -moz-transition: $transition
-    -o-transition: $transition
     -ms-transition: $transition
+    -o-transition: $transition
+    -webkit-transition: $transition
     transition: $transition
 
 // Transforms
 @mixin transform($transform: translate3d(0, 0, 0))
-    -webkit-transform: $transform
     -moz-transform: $transform
     -ms-transform: $transform
     -o-transform: $transform
+    -webkit-transform: $transform
     transform: $transform
 
-@mixin animation($animate...)
-    $max: length($animate)
-    $animations: ''
+// Animations
+@mixin animation($name)
+    -moz-animation: #{name}
+    -ms-animation: #{name}
+    -o-animation: #{name}
+    -webkit-animation: #{name}
+    animation: #{name}
 
-    @for $i from 1 through $max
-        $animations: #{$animations + nth($animate, $i)}
-
-        @if $i < $max
-            $animations: #{$animations + ", "}
-
-    -webkit-animation: $animations
-    -moz-animation:    $animations
-    -o-animation:      $animations
-    animation:         $animations
-
+// Keyframes
 @mixin keyframes($animationName)
     @-webkit-keyframes #{$animationName}
         @content
@@ -88,18 +82,18 @@
 
 // Delay
 @mixin delay($delay: 0s)
-    -webkit-animation-delay: $delay
     -moz-animation-delay: $delay
-    -o-animation-delay: $delay
     -ms-animation-delay: $delay
+    -o-animation-delay: $delay
+    -webkit-animation-delay: $delay
     delay: $delay
 
 @mixin strip($lines: 1)
-    overflow: hidden
-    text-overflow: ellipsis
-    display: -webkit-box
     -webkit-box-orient: vertical
     -webkit-line-clamp: $lines
+    display: -webkit-box
+    overflow: hidden
+    text-overflow: ellipsis
 
 @function strip-unit($num)
     @return $num / ($num * 0 + 1)
@@ -115,10 +109,10 @@
     $at2x_path: "#{$path}@2x.#{$ext}"
 
     background-image: url("#{$at1x_path}")
-    background-repeat: no-repeat
     background-position: center
+    background-repeat: no-repeat
 
-    @media all and (-webkit-min-device-pixel-ratio : 1.5)
+    @media all and (-webkit-min-device-pixel-ratio: 1.5)
         background-image: url("#{$at2x_path}")
         background-size: $w $h
     @media all and (-o-min-device-pixel-ratio: 3/2)

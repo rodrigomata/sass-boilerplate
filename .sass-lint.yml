@@ -1,10 +1,31 @@
 files:
   include: 'sass/**/*.s+(a|c)ss'
   ignore:
-    - 'sass/vendor/**/*.scss'
+    - 'sass/vendor/**/*.s+(a|c)ss'
     - 'node_modules/**/*.s+(a|c)ss'
 rules:
   indentation:
     - 2
     -
       size: 4
+  # Name Formats
+  class-name-format:
+    - 2
+    -
+      convention: hyphenatedbem
+resolvers:
+  property-sort-order:
+    - 1
+    - order: concentric
+  attribute-quotes: 1
+  border-zero: 1
+  no-color-keywords: 1
+  no-important: 1
+  no-trailing-zero: 1
+  space-after-bang: 1
+  space-before-bang: 1
+  empty-line-between-blocks: 1
+  url-quotes: 1
+  zero-unit: 1
+  hex-notation: 1
+  pseudo-element: 1
