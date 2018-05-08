@@ -28,4 +28,3 @@ resolvers:
   url-quotes: 1
   zero-unit: 1
   hex-notation: 1
-  pseudo-element: 1

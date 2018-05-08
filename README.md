@@ -47,7 +47,7 @@ Live server
 
 Minify and compile project
 ------
-`npm run prod:build`
+`npm run prod`
 
 ## Contribution
 

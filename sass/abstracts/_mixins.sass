@@ -35,64 +35,34 @@
 
 // Box shadow
 @mixin bs($bsval: 0 0 .83em #333, $due: 0 0 0 transparent)
-    -moz-box-shadow: $bsval, $due
-    -o-box-shadow: $bsval, $due
-    -webkit-box-shadow: $bsval, $due
     box-shadow: $bsval, $due
 
 // Opacity
 @mixin opacity($opacity)
-    -moz-opacity: $opacity
     opacity: $opacity
 
 // Transitions
 @mixin transition($transition: all linear .2s)
-    -moz-transition: $transition
-    -ms-transition: $transition
-    -o-transition: $transition
-    -webkit-transition: $transition
     transition: $transition
 
 // Transforms
 @mixin transform($transform: translate3d(0, 0, 0))
-    -moz-transform: $transform
-    -ms-transform: $transform
-    -o-transform: $transform
-    -webkit-transform: $transform
     transform: $transform
 
 // Animations
 @mixin animation($name)
-    -moz-animation: #{name}
-    -ms-animation: #{name}
-    -o-animation: #{name}
-    -webkit-animation: #{name}
     animation: #{name}
 
 // Keyframes
-@mixin keyframes($animationName)
-    @-webkit-keyframes #{$animationName}
-        @content
-    @-moz-keyframes #{$animationName}
-        @content
-    @-o-keyframes #{$animationName}
-        @content
-    @keyframes #{$animationName}
+@mixin keyframes($animation-name)
+    @keyframes #{$animation-name}
         @content
 
 // Delay
 @mixin delay($delay: 0s)
-    -moz-animation-delay: $delay
-    -ms-animation-delay: $delay
-    -o-animation-delay: $delay
-    -webkit-animation-delay: $delay
-    delay: $delay
+    transition-delay: $delay
 
 @mixin strip($lines: 1)
-    -webkit-box-orient: vertical
-    -webkit-line-clamp: $lines
-    display: -webkit-box
-    overflow: hidden
     text-overflow: ellipsis
 
 @function strip-unit($num)
@@ -104,25 +74,16 @@
 // Submitted by Nathan Crank
 // nathancrank.com
 
-@mixin at2x($path, $ext: "jpg", $w: auto, $h: auto)
-    $at1x_path: "#{$path}.#{$ext}"
-    $at2x_path: "#{$path}@2x.#{$ext}"
+@mixin at2x($path, $ext: 'jpg', $w: auto, $h: auto)
+    $at1x-path: '#{$path}.#{$ext}'
+    $at2x-path: '#{$path}@2x.#{$ext}'
 
-    background-image: url("#{$at1x_path}")
+    background-image: url('#{$at1x-path}')
     background-position: center
     background-repeat: no-repeat
 
-    @media all and (-webkit-min-device-pixel-ratio: 1.5)
-        background-image: url("#{$at2x_path}")
-        background-size: $w $h
-    @media all and (-o-min-device-pixel-ratio: 3/2)
-        background-image: url("#{$at2x_path}")
-        background-size: $w $h
-    @media all and (min--moz-device-pixel-ratio: 1.5)
-        background-image: url("#{$at2x_path}")
-        background-size: $w $h
     @media all and (min-device-pixel-ratio: 1.5)
-        background-image: url("#{$at2x_path}")
+        background-image: url('#{$at2x-path}')
         background-size: $w $h
 
 // Utilities
@@ -138,13 +99,13 @@
 //    that are clearfixed.
 // 2. The use of `table` rather than `block` is only necessary if using
 //    `:before` to contain the top-margins of child elements.
-@mixin clearfix()
+@mixin clearfix
     zoom: 1
-    &:before,
-    &:after
-        content: " "
+    &::before,
+    &::after
+        content: ' '
         display: table
-    &:after
+    &::after
         clear: both
 
 @mixin linear-gradient($direction, $color-stops...)
@@ -157,6 +118,6 @@
 
 @mixin radial-gradient($from, $to)
     background: -moz-linear-gradient(top, $from 0%, $to 100%)
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to))
-    background: -webkit-linear-gradient(top, $from 0%,$to 100%)
-    background: -o-linear-gradient(top, $from 0%,$to 100%)
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $from), color-stop(100%, $to))
+    background: -webkit-linear-gradient(top, $from 0%, $to 100%)
+    background: -o-linear-gradient(top, $from 0%, $to 100%)

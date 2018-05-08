@@ -1,6 +1,6 @@
 {
 	"name": "sass-boilerplate",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"description": "SASS Boilerplate project",
 	"main": "index.js",
 	"scripts": {
@@ -11,10 +11,11 @@
 		"watch:sass": "node-sass -w sass/ -o dist/",
 		"dev:server": "live-server",
 		"dev": "concurrently \"npm run watch:sass\" \"npm run dev:server\"",
-		"prod:build": ""
+		"build:css": "npm run test && postcss --use autoprefixer -b 'last 2 versions' < dist/main.css | postcss --use cssnano > dist/main.min.css",
+		"prod": "npm run build:css"
 	},
 	"husky": {
-		"hooks":{
+		"hooks": {
 			"pre-commit": "npm run lint:fix && npm run lint"
 		}
 	},
@@ -37,10 +38,14 @@
 	},
 	"homepage": "https://github.com/rodrigomata/sass-boilerplate#readme",
 	"devDependencies": {
+		"autoprefixer": "^8.4.1",
 		"concurrently": "^3.5.1",
+		"cssnano": "^3.10.0",
 		"husky": "^0.14.3",
 		"live-server": "^1.2.0",
 		"node-sass": "^4.9.0",
+		"postcss": "^6.0.22",
+		"postcss-cli": "^5.0.0",
 		"sass-lint": "^1.12.1",
 		"sass-lint-auto-fix": "^0.7.0"
 	},
